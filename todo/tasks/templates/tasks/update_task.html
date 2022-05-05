@@ -1,7 +1,33 @@
-<h3>Update Task</h3>
-
-<form method="POST" action="">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" name="Update Task" />
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'list.css' %}" />
+        <title>Update</title>
+    </head>
+<body>
+    <div class="container">
+        <form method="post" action="">
+            <div class="text-input">
+                {% csrf_token %}
+                {{ form.title }}
+            </div>
+            <div class="tasks update_task">
+                <div class="description-input">
+                    {{ form.description }}
+                </div>
+                <div class="tasks__buttons">
+                    <button class="complete-button" type="submit" formaction="{% url 'tasks:update_task' task.id %}"></button>
+                    <button class="delete-button" type="submit" formaction="{% url 'tasks:delete_task' task.id %}"></button>
+                </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
