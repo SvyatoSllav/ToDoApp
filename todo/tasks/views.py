@@ -1,17 +1,18 @@
 from django.shortcuts import (get_object_or_404, redirect,
                               render)
 
-from .forms import TaskForm
+from .forms import TaskForm, UpdateTaskForm
 from .models import Task
 
 
 def index(request):
     tasks = Task.objects.all()
     form = TaskForm
-
     if request.method == 'POST':
+        task_title = request.POST.get('task_title')
         form = TaskForm(request.POST)
         if form.is_valid():
+            print(task_title)
             form.save()
         return redirect('/')
 
@@ -25,14 +26,13 @@ def index(request):
 
 def update_task(request, pk):
     task = get_object_or_404(Task, pk=pk)
-    form = TaskForm(instance=task)
-    if request.method == 'POST':
-        form = TaskForm(request.POST, instance=task)
-        if form.is_valid():
-            form.save()
+    form = UpdateTaskForm(request.POST or None, instance=task)
+    if form.is_valid():
+        form.save()
         return redirect('/')
     context = {
-        'form': form
+        'form': form,
+        'task': task
     }
     return render(request, 'tasks/update_task.html', context=context)
 
