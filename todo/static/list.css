@@ -64,6 +64,9 @@ a{
     font-size: 18px;
     line-height: 27px;
 }
+.completed{
+    text-decoration: line-through;
+}
 .tasks__icons{
     display: flex;
     justify-content: space-between;
@@ -72,14 +75,14 @@ a{
     height: 35px;
 }
 .complete-icon{
-    transition: .3s;
+    transition: all .3s;
     margin-right: 17px;
 }
 .complete-icon:hover{
     content: url(../static/images/Green-done.svg);
 }
 .delete-icon{
-    transition: .3s;
+    transition: all .3s;
 }
 .delete-icon:hover{
     content: url(../static/images/red-close.svg);
