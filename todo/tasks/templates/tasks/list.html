@@ -1,17 +1,44 @@
-<h3>ToDo</h3>
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.title }}
-    <input type="submit" name="Create Task" />
-</form>
-{% for task in tasks %}
-    <div>
-        <a href="{% url 'tasks:update_task' task.id %}">Update</a>
-        <a href="{% url 'tasks:delete_task' task.id %}">Delete</a>
-        {% if task.complete == True %}
-            <strike>{{ task }}</strike>
-        {% else %}
-            <span>{{ task }}</span>
-        {% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'list.css' %}" />
+    <title>Tasks</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="text-input">
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.title }}
+            </form>
+        </div>
+        <div class="tasks">
+            {% for task in tasks %}
+                    <div class="tasks__task">
+                            <a href="{% url 'tasks:update_task' task.id %}">
+                                <span class="tasks__title {% if task.complete %}completed{% endif %}">{{ task.title }}</span>
+                            </a>
+                            <div class="tasks__icons">
+                                <a class="complete-icon" href="{% url 'tasks:complete_task' task.id %}">
+                                    <img Width="35px" Height="35px" src="{% static 'images/Done.svg' %}" alt="" />
+                                </a>
+                                <a class="delete-icon" href="{% url 'tasks:delete_task' task.id %}">
+                                    <img Width="35px" Height="35px" src="{% static 'images/Close.svg' %}" alt="" />
+                                </a>
+                            </div>
+                    </div>
+            {% endfor %}
+        </div>
     </div>
-{% endfor %}
+
+</body>
+</html>
