@@ -1,0 +1,146 @@
+html{
+    box-sizing: border-box;
+}
+*{
+    box-sizing: inherit;
+}
+body{
+    background-color:#FFD495;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.container{
+    max-width: 542px;
+    height: 100px;
+    margin: 0px auto;
+    padding-top: 43px;
+    
+}
+.text-input{
+    background-color: #fff6e7;
+    max-width: 542px;
+    height: 53px;
+    border-radius: 27px;
+    position: relative;
+    margin-bottom: 35px;
+}
+.text-input input[type="text"]{
+    padding-left: 26px;
+    width: 100%;
+    height: 53px;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    border-radius: 27px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 27px;
+}
+.tasks{
+    box-sizing: content-box;
+    background-color: #ffefd6;
+    border-radius: 21px;
+    padding: 22px 20px 46px 20px;
+}
+.tasks__task{
+    background-color: #EDB0B0;
+    margin-bottom: 46px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 20px 11px 20px;
+}
+
+.tasks .tasks__task:last-child{
+    margin-bottom: 0;
+}
+.tasks__title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+.tasks__icons{
+    display: flex;
+    justify-content: space-between;
+}
+.tasks__icons a{
+    height: 35px;
+}
+.complete-icon{
+    transition: .3s;
+    margin-right: 17px;
+}
+.complete-icon:hover{
+    content: url(../static/images/Green-done.svg);
+}
+.delete-icon{
+    transition: .3s;
+}
+.delete-icon:hover{
+    content: url(../static/images/red-close.svg);
+}
+.tasks.update_task{
+    min-height: 500px;
+    padding-top: 37px;
+    padding-left: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.description-input{
+    width: 100%;
+    min-height: 450px;
+    padding-bottom: 20px;
+    text-align: left;
+    vertical-align: top;
+    box-sizing: content-box;
+}
+.description-input textarea{
+    width: 100%;
+    height: 450px;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+.complete-button{
+    width: 131px;
+    height: 36px;
+    border: none;
+    background-color: rgb(5%, 83%, 32%, 0.5);
+    border-radius: 24px;
+    cursor: pointer;
+}
+.complete-button::after{
+    content: "Complete";
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+.delete-button{
+    width: 131px;
+    height: 36px;
+    border: none;
+    background-color: rgb(98%, 36%, 36%, 0.8);;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.delete-button::after{
+    content: "Delete";
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
