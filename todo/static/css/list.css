@@ -79,13 +79,13 @@ a{
     margin-right: 17px;
 }
 .complete-icon:hover{
-    content: url(../static/images/Green-done.svg);
+    content: url(../images/Green-done.svg);
 }
 .delete-icon{
     transition: all .3s;
 }
 .delete-icon:hover{
-    content: url(../static/images/red-close.svg);
+    content: url(../images/red-close.svg);
 }
 .tasks.update_task{
     min-height: 500px;
