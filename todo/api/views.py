@@ -30,7 +30,7 @@ class TaskViewSet(ViewSet):
     def update(self, request, pk=None):
         task = get_object_or_404(Task, pk=pk)
         serializer = TaskSerializer(task, data=request.data)
-        serializer.is_valid(raise_exception=True):
+        serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
 
