@@ -3,7 +3,7 @@
 
 # Установка
 ```
-git clone https://github.com/yandex-praktikum/kittygram.git
+git clone https://github.com/evencatt/ToDoApp.git
 ```
 Cоздать и активировать виртуальное окружение:
 ```
