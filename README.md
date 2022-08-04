@@ -1,6 +1,16 @@
 # ToDo app
-Небольшой проект ToDo списка дел с возможность добавления новых задач и их описания через веб интерфейс или через API.
-Стек: Django, Django REST Framework, Heroku, PostgreSQL.
+ToDo список дел с возможность добавления новых задач и их описания через веб интерфейс или через API.
+
+### **Стек**
+![python version](https://img.shields.io/badge/Python-3.7-green)
+![django version](https://img.shields.io/badge/Django-2.2-green)
+![pillow version](https://img.shields.io/badge/Pillow-8.3-green)
+![pytest version](https://img.shields.io/badge/pytest-6.2-green)
+![requests version](https://img.shields.io/badge/requests-2.26-green)
+![sorl-thumbnail version](https://img.shields.io/badge/thumbnail-12.7-green)
+
+# Планы:
+  * Реализовать систему регистрации и сделать так, чтобы у каждого пользователя был свой личный список.
 
 # Установка
 ```
