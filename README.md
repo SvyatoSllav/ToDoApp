@@ -6,7 +6,6 @@ ToDo список дел с возможность добавления новы
 ![django version](https://img.shields.io/badge/Django-2.2-green)
 ![pillow version](https://img.shields.io/badge/Pillow-8.3-green)
 ![pytest version](https://img.shields.io/badge/pytest-6.2-green)
-![requests version](https://img.shields.io/badge/requests-2.26-green)
 ![sorl-thumbnail version](https://img.shields.io/badge/thumbnail-12.7-green)
 
 # Планы:
